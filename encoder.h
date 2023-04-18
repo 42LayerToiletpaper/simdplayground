@@ -2,10 +2,10 @@
 // Created by mo on 4/11/23.
 //
 #include <string>
-#include "simde/x86/sse.h"
-#include "simde/x86/sse2.h"
-#include "simde/x86/ssse3.h"
-#include "simde/x86/avx512.h"
+#include </home/mo/IT/openMS/simde-master/simde/x86/sse.h>
+#include </home/mo/IT/openMS/simde-master/simde/x86/sse2.h>
+#include </home/mo/IT/openMS/simde-master/simde/x86/ssse3.h>
+
 #ifndef SSEPLAYGROUND_ENCODER_H
 #define SSEPLAYGROUND_ENCODER_H
 
@@ -14,11 +14,11 @@ class Encoder {
 
 public:
 
-    Encoder() = default;
-
     void encodeString(const std::string &in, std::string &out);
 
 private:
+
+    void registerDecoder(simde__m128i & data);
     const simde__m128i mask1 = simde_mm_set1_epi32(0x3F000000);//00111111 00000000 00000000 00000000
     const simde__m128i mask2 = simde_mm_set1_epi32(0x003F0000);//00000000 00111111 00000000 00000000
     const simde__m128i mask3 = simde_mm_set1_epi32(0x00003F00);//00000000 00000000 00111111 00000000
